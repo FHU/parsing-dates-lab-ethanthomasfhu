@@ -9,7 +9,7 @@ def parse_month(month):
 
 def parse_day(day):
     day = day.replace(",","")
-    new= "0"
+    new = "0"
     day_number = int(day)
 
     if day_number < 10:
@@ -34,9 +34,9 @@ def parse_date(user_string):
     return parsed_date
 
 if __name__ == '__main__':
-    user_input = input()
+    user_input = input("Enter a date: ")
 
     while user_input != "-1":
         parsed = parse_date(user_input)
         print(parsed)
-        user_input = input()
+        user_input = input("Enter a date: ")
