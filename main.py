@@ -1,51 +1,44 @@
 def parse_month(month):
-    month_values = {
-        "January":"01",
-        "February":"02",
-        "March":"03",
-        "April":"04",
-        "May":"05",
-        "June":"06",
-        "July":"07",
-        "August":"08",
-        "September":"09",
-        "October":"10",
-        "November":"11",
-        "December":"12"
-    }
-    month_number = month_values[month]
-    return month_number
+    months = {"January": "01", "February": "02", "March": "03", "April": "04", 
+              "May": "05", "June": "06", "July": "07", "August": "08", 
+              "September": "09", "October": "10", "November": "11", 
+              "December": "12" }
+    month_numeric = months[month]
+    return month_numeric
 
-def day_place(day):
+def parse_day(day):
     day = day.replace(",","")
-    new_value = "0"
-    day_value = int(day)
+    new= "0"
+    day_number = int(day)
 
-    if day_value < 10:
-        new_value += day
+    if day_number < 10:
+        new += day 
     else:
         new = day
 
     return new
+    pass
 
 def parse_date(user_string):
-    date_string = ""
-    all_together = user_string.split()
-    month = all_together[0]
-    day = all_together[1]
-    year = all_together[2]
+    parsed_date = ""
+    comps = user_string.split()
+    month = comps[0]
+    day = comps[1]
+    year = comps[2]
 
-    month_value = parse_month(month)
-    day_value = day_place(day)
+    month_str = parse_month(month)
+    day_str = parse_day(day)
 
-    date_string = month_value + "/" + day_value + "/" + year
+    parsed_date = month_str + "/" + day_str + "/" + year
 
-    return date_string
-    
+    return parsed_date
+
+    pass
+
 if __name__ == '__main__':
-    user_date = input()
+    user_input = input("Enter a date: ")
 
-    while user_date != "-1":
-        complete = parse_date(user_date)
-        print(complete)
-        user_date = input()
+    while user_input != "-1":
+        parsed = parse_date(user_input)
+        print(parsed)
+        user_input = input("Enter a date: ")
