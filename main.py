@@ -33,8 +33,6 @@ def parse_date(user_string):
 
     return parsed_date
 
-    pass
-
 if __name__ == '__main__':
     user_input = input("Enter a date: ")
 
