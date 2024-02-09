@@ -17,7 +17,6 @@ def parse_day(day):
         new = day
 
     return new
-    pass
 
 def parse_date(user_string):
     parsed_date = ""
@@ -34,9 +33,9 @@ def parse_date(user_string):
     return parsed_date
 
 if __name__ == '__main__':
-    user_input = input("Enter a date: ")
+    user_input = input()
 
     while user_input != "-1":
         parsed = parse_date(user_input)
         print(parsed)
-        user_input = input("Enter a date: ")
+        user_input = input()
